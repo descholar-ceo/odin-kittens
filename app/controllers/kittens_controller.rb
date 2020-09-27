@@ -12,7 +12,14 @@ class KittensController < ApplicationController
   end
 
   def edit
+    @kitten = Kitten.find(params[:id])
+  end
+
+  def create
     @kitten = Kitten.new(kitten_params)
+    @kitten.save
+    flash.notice = "Your kitten #{@kitten.name} has been created successfully!"
+    redirect_to kitten_path(@kitten)
   end
 
   private
