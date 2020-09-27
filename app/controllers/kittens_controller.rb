@@ -22,6 +22,13 @@ class KittensController < ApplicationController
     redirect_to kitten_path(@kitten)
   end
 
+  def update
+    @kitten = Kitten.find(params[:id])
+    @kitten.update(kitten_params)
+    flash.notice = "Your kitten #{@kitten.name} has been updated successfully!"
+    redirect_to kitten_path(@kitten)
+  end
+
   private
 
   def kitten_params
