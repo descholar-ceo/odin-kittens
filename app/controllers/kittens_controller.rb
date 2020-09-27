@@ -29,6 +29,13 @@ class KittensController < ApplicationController
     redirect_to kitten_path(@kitten)
   end
 
+  def destroy
+      @kitten = Kitten.find(params[:id])
+      @kitten.destroy
+      flash.notice = "Your kitten #{@kitten.name} has been destroyed"
+      redirect_to kittens_path
+  end
+
   private
 
   def kitten_params
