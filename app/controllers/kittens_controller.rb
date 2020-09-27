@@ -30,10 +30,10 @@ class KittensController < ApplicationController
   end
 
   def destroy
-      @kitten = Kitten.find(params[:id])
-      @kitten.destroy
-      flash.notice = "Your kitten #{@kitten.name} has been destroyed"
-      redirect_to kittens_path
+    @kitten = Kitten.find(params[:id])
+    @kitten.destroy
+    flash.notice = "Your kitten #{@kitten.name} has been destroyed"
+    redirect_to kittens_path
   end
 
   private
