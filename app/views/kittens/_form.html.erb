@@ -1,0 +1,10 @@
+<%= form_for(@kitten) do |f| %>
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+<% end %>
