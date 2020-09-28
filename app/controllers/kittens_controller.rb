@@ -3,7 +3,7 @@ class KittensController < ApplicationController
     @kittens = Kitten.all
     respond_to do |format|
       format.html { render 'index.html.erb' }
-      format.json { render :json => @kittens }
+      format.json { render json: @kittens }
     end
   end
 
