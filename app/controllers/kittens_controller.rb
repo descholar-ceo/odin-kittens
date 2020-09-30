@@ -1,6 +1,10 @@
+# require 'flickr'
+
 class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
+    # flickr = Flickr.new '6b52fe6bc2f384202d8478ab512505fc','a04aa17e88925fd4'
+    puts "Submitted params are : #{params[:user_id]}"
     respond_to do |format|
       format.html { render 'index.html.erb' }
       format.json { render json: @kittens }
